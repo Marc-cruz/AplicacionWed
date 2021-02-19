@@ -8,16 +8,15 @@ using System.Web.Mvc;
 
 namespace PumasUNAH.Wed.Controllers
 {
-    public class TiendaController : Controller
+    public class EntradaController : Controller
     {
-        // GET: Tienda
+        // GET: Entradas
         public ActionResult Index()
         {
-            var tiendaBL = new TiendaBL();
-            var ListadeTienda = tiendaBL.ObtenerTienda();
-            
-          
-            return View(ListadeTienda);
+            var entradasBL = new EntradaBL();
+            var listadeEntradas = entradasBL.ObtenerEntradas();
+
+            return View(listadeEntradas);
         }
     }
 }

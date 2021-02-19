@@ -8,20 +8,49 @@ namespace PumasUnah.BL
 {
     public class TiendaBL
     {
+
         Contexto _contexto;
-        public List<Tienda> ListadeTienda { get; set; }
+        public List<Tienda> listadeTienda{ get; set; }
 
         public TiendaBL()
         {
             _contexto = new Contexto();
-            ListadeTienda = new List<Tienda>();
+            listadeTienda = new List<Tienda>();
         }
-       public List<Tienda> ObtenerTienda()
+
+        public List<Tienda> ObtenerTienda()
         {
+            listadeTienda = _contexto.Tienda.ToList();
+            return listadeTienda;
+        }
 
-            ListadeTienda = _contexto.Tienda.ToList();
+        public void GuardarTienda(Tienda tienda)
+        {
+            if (tienda.Id == 0)
+            {
+                _contexto.Tienda.Add(tienda);
+            }
+            else
+            {
+                var tiendaExistente = _contexto.Tienda.Find(tienda.Id);
+                tiendaExistente.Descripcion = tienda.Descripcion;
+            }
 
-            return ListadeTienda;
+            _contexto.SaveChanges();
+        }
+
+        public Tienda ObtenerTienda(int Id)
+        {
+            var tienda = _contexto.Tienda.Find(Id);
+            return tienda;
+        }
+
+        public void EliminarTienda(int Id)
+        {
+            var tienda = _contexto.Tienda.Find(Id);
+
+            _contexto.Tienda.Remove(tienda);
+            _contexto.SaveChanges();
         }
 
     }

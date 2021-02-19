@@ -16,28 +16,12 @@ namespace PumasUnah.Win
         public Form1()
         {
             InitializeComponent();
+            var entradaBL = new EntradaBL();
+            var listadeEntrada = entradaBL.ObtenerEntradas();
 
-            var tiendaBL = new TiendaBL();
-            var ListadeTienda = tiendaBL.ObtenerTienda();
+            listadeEntradaBindingSource.DataSource = listadeEntrada;
 
-            listadeTiendaBindingSource.DataSource = ListadeTienda;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var entradasBL = new EntradasBL();
-            var ListadeEntradas = entradasBL.ObtenerEntradas();
-
-            foreach (var entradas in ListadeEntradas)
-            {
-                MessageBox.Show(entradas.Descripcion);
-            }
-        }
-
     }
 }

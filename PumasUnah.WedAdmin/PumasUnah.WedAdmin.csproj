@@ -114,7 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EntradaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TiendaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -130,6 +132,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Entrada\Index.cshtml" />
+    <Content Include="Views\Entrada\Crear.cshtml" />
+    <Content Include="Views\Entrada\Editar.cshtml" />
+    <Content Include="Views\Entrada\Detalle.cshtml" />
+    <Content Include="Views\Entrada\Eliminar.cshtml" />
+    <Content Include="Views\Tienda\Crear.cshtml" />
+    <Content Include="Views\Tienda\Index.cshtml" />
+    <Content Include="Views\Tienda\Editar.cshtml" />
+    <Content Include="Views\Tienda\Eliminar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -140,6 +151,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Shared\Tienda\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PumasUnah.BL\PumasUnah.BL.csproj">

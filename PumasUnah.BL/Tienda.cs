@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace PumasUnah.BL
 {
-    public class Tienda
+     public class Tienda
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }
-       
-
     }
 }

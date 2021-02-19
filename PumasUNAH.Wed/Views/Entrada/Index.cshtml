@@ -1,12 +1,12 @@
-﻿@model List<PumasUnah.BL.Entradas>
+﻿@model List<PumasUnah.BL.Entrada>
+
 @{
-    ViewBag.Title = "Fc.PunmasUnah";
+    ViewBag.Title = "Entradas";
 }
 
 <h2>Entradas</h2>
 
-
-<table class="table table-striped table-hover">
+<table class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>
@@ -20,12 +20,12 @@
             </th>
         </tr>
     </thead>
-    @foreach (var entradas in Model)
+    @foreach (var entrada in Model)
     {
         <tr>
-            <td>@entradas.Id</td>
-            <td>@entradas.Descripcion</td>
-            <td>@entradas.Precio</td>
+            <td>@entrada.Id</td>
+            <td>@entrada.Descripcion</td>
+            <td>@entrada.Precio</td>
         </tr>
     }
 </table>
