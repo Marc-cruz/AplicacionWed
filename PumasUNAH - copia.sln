@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PumasUNAH.Wed", "PumasUNAH.Wed\PumasUNAH.Wed.csproj", "{4FD6185F-627A-4810-84DC-67003A047C7B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PumasUnah.WedAdmin", "PumasUnah.WedAdmin\PumasUnah.WedAdmin.csproj", "{2882CCAA-0AA8-4C86-AF33-1B4180FB5312}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PumasUnah.Win", "PumasUnah.Win\PumasUnah.Win.csproj", "{E3265EE7-EE8C-41F1-994E-5934EFD1232B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PumasUnah.Win", "PumasUnah.Win\PumasUnah.Win.csproj", "{B8B191AD-75AC-4F68-9334-2AAFB7D99C40}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PumasUnah.BL", "PumasUnah.BL\PumasUnah.BL.csproj", "{5413ADD1-0C59-4DF8-B53F-27F6EA72B70F}"
 EndProject
@@ -25,10 +25,10 @@ Global
 		{2882CCAA-0AA8-4C86-AF33-1B4180FB5312}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2882CCAA-0AA8-4C86-AF33-1B4180FB5312}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2882CCAA-0AA8-4C86-AF33-1B4180FB5312}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E3265EE7-EE8C-41F1-994E-5934EFD1232B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3265EE7-EE8C-41F1-994E-5934EFD1232B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3265EE7-EE8C-41F1-994E-5934EFD1232B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3265EE7-EE8C-41F1-994E-5934EFD1232B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8B191AD-75AC-4F68-9334-2AAFB7D99C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8B191AD-75AC-4F68-9334-2AAFB7D99C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8B191AD-75AC-4F68-9334-2AAFB7D99C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8B191AD-75AC-4F68-9334-2AAFB7D99C40}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5413ADD1-0C59-4DF8-B53F-27F6EA72B70F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5413ADD1-0C59-4DF8-B53F-27F6EA72B70F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5413ADD1-0C59-4DF8-B53F-27F6EA72B70F}.Release|Any CPU.ActiveCfg = Release|Any CPU
