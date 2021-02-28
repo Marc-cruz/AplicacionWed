@@ -37,9 +37,18 @@ namespace PumasUnah.WedAdmin.Controllers
         [HttpPost]
         public ActionResult Crear (Entrada entrada)
         {
-            _entradaBL.GuardarEntrada(entrada);
+            if (ModelState.IsValid)
+            {
+                if(entrada.Descripcion != entrada.Descripcion.Trim())
+                {
+                    ModelState.AddModelError("descripcion", "la descipcion no debe de contener espacio al incio o al final");
+                    return View(entrada);
+                }
+                _entradaBL.GuardarEntrada(entrada);
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            return View(entrada);
         }
 
         public ActionResult Editar(int Id)
@@ -52,9 +61,18 @@ namespace PumasUnah.WedAdmin.Controllers
         [HttpPost]
         public ActionResult Editar (Entrada entrada)
         {
-            _entradaBL.GuardarEntrada(entrada);
+            if (ModelState.IsValid)
+            {
+                if (entrada.Descripcion != entrada.Descripcion.Trim())
+                {
+                    ModelState.AddModelError("descripcion", "la descipcion no debe de contener espacio al incio o al final");
+                    return View(entrada);
+                }
+                _entradaBL.GuardarEntrada(entrada);
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            return View(entrada);
         }
 
         public ActionResult Detalle(int Id)

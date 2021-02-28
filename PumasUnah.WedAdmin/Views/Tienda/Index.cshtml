@@ -14,19 +14,29 @@
         <th>
             @Html.DisplayNameFor(model => model.Descripcion)
         </th>
-        <th></th>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.UrlImagen)
+        </th>
+        <td>
+
+        </td>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td> 
+        <dt> 
             @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
+        </dt>
         <td>
             @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |
             @Html.ActionLink("Detalle", "Detalle", new { id=item.Id }) |
             @Html.ActionLink("Eliminar", "Eliminar", new { id=item.Id })
         </td>
+        <dt>
+            <img src="@item.UrlImagen" alt="@item.Descripcion" style="max-width:64px; height:auto;" />
+        </dt>
+        </>
     </tr>
 }
 
