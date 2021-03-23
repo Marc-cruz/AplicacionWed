@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PumasUnah.BL.Tienda>
+
+@{
+    ViewBag.Title = "Tienda";
+}
+
+<h2>Tienda</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Crear")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.UrlImagen)
+        </th>
+        <td>
+
+        </td>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+            @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }) |
+            @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id })
+        </td>
+        <td>
+            <img src="@item.UrlImagen" alt="@item.Descripcion" style="max-width:64px; height:auto;" />
+        </td>
+    </tr>
+        
+    
+}
+
+</table>

@@ -1,0 +1,31 @@
+﻿@model List<PumasUnah.BL.Entrada>
+
+@{
+    ViewBag.Title = "Entradas";
+}
+
+<h2>Entradas</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Codigo
+            </th>
+            <th>
+                Descripcion
+            </th>
+            <th>
+                Precio
+            </th>
+        </tr>
+    </thead>
+    @foreach (var entrada in Model)
+    {
+        <tr>
+            <td>@entrada.Id</td>
+            <td>@entrada.Descripcion</td>
+            <td>@entrada.Precio</td>
+        </tr>
+    }
+</table>
