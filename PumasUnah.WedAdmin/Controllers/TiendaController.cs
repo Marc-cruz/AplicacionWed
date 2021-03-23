@@ -32,11 +32,27 @@ namespace PumasUnah.WedAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Crear(Tienda entrada)
+        public ActionResult Crear(Tienda tienda, HttpPostedFileBase imagen)
         {
-            _tiendaBL.GuardarTienda(entrada);
+            if (ModelState.IsValid)
+            {
+                if (tienda.Id == 0)
+                {
+                    ModelState.AddModelError("descripcion", "seleccione una categoria");
+                    return View(tienda);
+                }
+                if (imagen != null)
+                {
+                    tienda.UrlImagen = GuardarImagen(imagen);
+                }
 
-            return RedirectToAction("Index");
+                _tiendaBL.GuardarTienda(tienda);
+
+                return RedirectToAction("Index");
+            }
+            var nuevaTienda = new Tienda();
+            
+            return View(tienda);
         }
 
         public ActionResult Editar(int Id)
@@ -47,13 +63,24 @@ namespace PumasUnah.WedAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(Tienda entrada)
+        public ActionResult Editar(Tienda tienda)
         {
-            _tiendaBL.GuardarTienda(entrada);
+            if (ModelState.IsValid)
+            {
+                if (tienda.Id == 0)
+                {
+                    ModelState.AddModelError("descripcion", "seleccione una categoria");
+                    return View(tienda);
+                }
 
-            return RedirectToAction("Index");
+                _tiendaBL.GuardarTienda(tienda);
+
+                return RedirectToAction("Index");
+            }
+            var nuevaTienda = new Tienda();
+
+            return View(tienda);
         }
-
         public ActionResult Detalle (int Id)
         {
             var entrada = _tiendaBL.ObtenerTienda(Id);
@@ -74,6 +101,13 @@ namespace PumasUnah.WedAdmin.Controllers
             _tiendaBL.EliminarTienda(entrada.Id);
 
             return RedirectToAction("Index");
+        }
+        private string GuardarImagen(HttpPostedFileBase imagen)
+        {
+            string path = Server.MapPath("~/Imagenes/" + imagen.FileName);
+            imagen.SaveAs(path);
+
+            return "/Imagenes/" + imagen.FileName;
         }
     }
 }

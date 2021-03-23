@@ -34,6 +34,7 @@ namespace PumasUnah.BL
             {
                 var tiendaExistente = _contexto.Tienda.Find(tienda.Id);
                 tiendaExistente.Descripcion = tienda.Descripcion;
+                tiendaExistente.UrlImagen = tienda.UrlImagen;
             }
 
             _contexto.SaveChanges();
