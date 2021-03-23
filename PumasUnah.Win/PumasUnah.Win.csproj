@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B8B191AD-75AC-4F68-9334-2AAFB7D99C40}</ProjectGuid>
+    <ProjectGuid>{E3265EE7-EE8C-41F1-994E-5934EFD1232B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PumasUnah.Win</RootNamespace>
