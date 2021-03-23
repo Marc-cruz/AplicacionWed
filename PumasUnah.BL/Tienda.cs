@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PumasUnah.BL
+namespace PumasUnah.BL   
 {
     public class Tienda
     {
