@@ -1,0 +1,10 @@
+C:\Users\dell\Source\Repos\AplicacionWed\PumasUnah.BL\bin\Debug\PumasUnah.BL.dll.config
+C:\Users\dell\Source\Repos\AplicacionWed\PumasUnah.BL\bin\Debug\PumasUnah.BL.dll
+C:\Users\dell\Source\Repos\AplicacionWed\PumasUnah.BL\bin\Debug\PumasUnah.BL.pdb
+C:\Users\dell\Source\Repos\AplicacionWed\PumasUnah.BL\bin\Debug\EntityFramework.dll
+C:\Users\dell\Source\Repos\AplicacionWed\PumasUnah.BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dell\Source\Repos\AplicacionWed\PumasUnah.BL\bin\Debug\EntityFramework.xml
+C:\Users\dell\Source\Repos\AplicacionWed\PumasUnah.BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dell\Source\Repos\AplicacionWed\PumasUnah.BL\obj\Debug\PumasUnah.BL.csprojResolveAssemblyReference.cache
+C:\Users\dell\Source\Repos\AplicacionWed\PumasUnah.BL\obj\Debug\PumasUnah.BL.dll
+C:\Users\dell\Source\Repos\AplicacionWed\PumasUnah.BL\obj\Debug\PumasUnah.BL.pdb
