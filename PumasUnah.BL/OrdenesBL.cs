@@ -16,6 +16,7 @@ namespace PumasUnah.BL
             _contexto = new Contexto();
             ListadeOrdenes = new List<Orden>();
         }
+
         public List<Orden> ObtenerOrdenes()
         {
             ListadeOrdenes = _contexto.Ordenes
@@ -61,7 +62,7 @@ namespace PumasUnah.BL
             {
                 var ordenExistente = _contexto.Ordenes.Find(orden.Id);
                 ordenExistente.ClienteId = orden.ClienteId;
-               // ordenExistente.Activo = orden.Activo;
+               //ordenExistente.Activo = orden.Activo;
             }
 
             _contexto.SaveChanges();
@@ -70,7 +71,7 @@ namespace PumasUnah.BL
         {
             var tienda = _contexto.Tienda.Find(ordenDetalle.TiendaId);
 
-            ordenDetalle.Precio = ordenDetalle.Tienda.Precio;
+            ordenDetalle.Precio = tienda.Precio;
             ordenDetalle.Total = ordenDetalle.Cantidad * ordenDetalle.Precio;
 
             _contexto.OrdenDetalle.Add(ordenDetalle);

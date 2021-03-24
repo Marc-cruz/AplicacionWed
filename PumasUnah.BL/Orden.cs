@@ -14,6 +14,7 @@ namespace PumasUnah.BL
         public DateTime Fecha { get; set; }
         public double Total { get; set; }
         public bool Activo { get; private set; }
+
         public List<OrdenDetalle> ListadeOrdenDetalle { get; set; }
         
 
