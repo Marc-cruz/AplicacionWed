@@ -5,7 +5,7 @@
     ViewBag.Title = "Orden Detalle";
 }
 
-<h>Orden N° @Model.Id</h>
+<h2>Detalle de la Orden No° @Model.Id</h2>
 <hr />
 
 <table class="table table-bordered table-hover">
@@ -34,12 +34,12 @@
 </table>
 
 <p>
-    @Html.ActionLink("Nuevo Producto", "Crear")
+    @Html.ActionLink("Nuevo Producto", "Crear", new { id = Model.Id})
 </p>
 <table class="table">
     <tr>
         <th>
-            Tienda
+            Producto
         </th>
         <th>
             Cantidad
@@ -56,7 +56,7 @@
 @foreach (var item in Model.ListadeOrdenDetalle) {
     <tr>
         <td>
-            <img src="@item.Tienda.UrlImagen" alt="@item.Tienda.Descripcion" style="max-height: 54px; height:auto;"/>
+            <img src="@item.Tienda.UrlImagen" alt="@item.Tienda.Descripcion" style="max-height: 64px; height:auto;"/>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Tienda.Descripcion)

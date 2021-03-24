@@ -13,7 +13,7 @@ namespace PumasUnah.BL
         public Cliente Cliente { get; set; }
         public DateTime Fecha { get; set; }
         public double Total { get; set; }
-        public bool Activo { get; private set; }
+        public bool Activo { get;  set; }
 
         public List<OrdenDetalle> ListadeOrdenDetalle { get; set; }
         

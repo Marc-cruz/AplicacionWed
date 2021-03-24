@@ -65,6 +65,8 @@
     <Compile Include="Orden.cs" />
     <Compile Include="OrdenesBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportedeVentasBL.cs" />
+    <Compile Include="ReportedeVentas.cs" />
     <Compile Include="Tienda.cs" />
     <Compile Include="TiendaBL.cs" />
   </ItemGroup>

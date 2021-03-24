@@ -62,7 +62,7 @@ namespace PumasUnah.BL
             {
                 var ordenExistente = _contexto.Ordenes.Find(orden.Id);
                 ordenExistente.ClienteId = orden.ClienteId;
-               //ordenExistente.Activo = orden.Activo;
+                ordenExistente.Activo = orden.Activo;
             }
 
             _contexto.SaveChanges();

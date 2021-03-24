@@ -10,10 +10,12 @@ namespace PumasUnah.WedAdmin.Controllers
     public class TiendaController : Controller
     {
         TiendaBL _tiendaBL;
+        CategoriaBL _categoriaBL;
 
         public TiendaController()
         {
             _tiendaBL = new TiendaBL();
+            _categoriaBL = new CategoriaBL();
         }
 
         // GET: Tienda
@@ -28,6 +30,9 @@ namespace PumasUnah.WedAdmin.Controllers
         public ActionResult Crear()
         {
             var nuevaTienda = new Tienda();
+            var categorias = _categoriaBL.ObtenerCategorias();
+
+            ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
             return View(nuevaTienda);
         }
 
@@ -36,11 +41,12 @@ namespace PumasUnah.WedAdmin.Controllers
         {
             if (ModelState.IsValid)
             {
-               /* if (tienda.Id == 0)
+                if (tienda.CategoriaId == 0)
                 {
-                    ModelState.AddModelError("descripcion", "seleccione una categoria");
+                    ModelState.AddModelError("CategoriaId", "seleccione una categoria");
                     return View(tienda);
-                }*/
+                }
+
                 if (imagen != null)
                 {
                     tienda.UrlImagen = GuardarImagen(imagen);
@@ -50,34 +56,47 @@ namespace PumasUnah.WedAdmin.Controllers
 
                 return RedirectToAction("Index");
             }
-            var nuevaTienda = new Tienda();
-            
+
+            var categorias = _categoriaBL.ObtenerCategorias();
+
+            ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
+
             return View(tienda);
         }
 
         public ActionResult Editar(int Id)
         {
-            var entrada = _tiendaBL.ObtenerTienda(Id);
+            var tienda = _tiendaBL.ObtenerTienda(Id);
+            var categorias = _categoriaBL.ObtenerCategorias();
 
-            return View(entrada);
+            ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion", tienda.CategoriaId);
+            return View(tienda);
         }
 
         [HttpPost]
-        public ActionResult Editar(Tienda tienda)
+        public ActionResult Editar(Tienda tienda, HttpPostedFileBase imagen)
         {
             if (ModelState.IsValid)
             {
-                if (tienda.Id == 0)
+                if (tienda.CategoriaId == 0)
                 {
-                    ModelState.AddModelError("descripcion", "seleccione una categoria");
+                    ModelState.AddModelError("CategoriaId", "seleccione una categoria");
                     return View(tienda);
+                }
+
+                if (imagen != null)
+                {
+                    tienda.UrlImagen = GuardarImagen(imagen);
                 }
 
                 _tiendaBL.GuardarTienda(tienda);
 
                 return RedirectToAction("Index");
             }
-            var nuevaTienda = new Tienda();
+
+            var categorias = _categoriaBL.ObtenerCategorias();
+
+            ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
 
             return View(tienda);
         }

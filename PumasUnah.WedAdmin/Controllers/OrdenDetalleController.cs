@@ -17,6 +17,7 @@ namespace PumasUnah.WedAdmin.Controllers
             _ordenBL = new OrdenesBL();
             _tiendaBL = new TiendaBL();
         }
+
         // GET: OrdenDetalle
         public ActionResult Index(int id)
         {
@@ -30,8 +31,8 @@ namespace PumasUnah.WedAdmin.Controllers
             var nuevaOrdenDetalle = new OrdenDetalle();
             nuevaOrdenDetalle.OrdenId = id;
 
-            var tienda = _tiendaBL.ObtenerTienda();
-            ViewBag.TiendaId = new SelectList(tienda, "Id", "Descricion");
+            var tienda = _tiendaBL.ObtenerTiendaActivos();
+            ViewBag.TiendaId = new SelectList(tienda, "Id", "Descripcion");
 
             return View(nuevaOrdenDetalle); 
         }
@@ -50,7 +51,7 @@ namespace PumasUnah.WedAdmin.Controllers
                 return RedirectToAction("Index", new {id = ordenDetalle.OrdenId });
             }
 
-            var tienda = _tiendaBL.ObtenerTienda();
+            var tienda = _tiendaBL.ObtenerTiendaActivos();
             ViewBag.TiendaId = new SelectList(tienda, "Id", "Descripcion");
 
             return View(ordenDetalle);

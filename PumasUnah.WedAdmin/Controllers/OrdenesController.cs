@@ -11,6 +11,7 @@ namespace PumasUnah.WedAdmin.Controllers
     {
         OrdenesBL _ordenesBL;
         ClienteBL _clienteBL;
+
         public OrdenesController()
         {
             _ordenesBL = new OrdenesBL();
@@ -29,7 +30,7 @@ namespace PumasUnah.WedAdmin.Controllers
         public ActionResult Crear()
         {
             var nuevaOrden = new Orden();
-            var cliente = _clienteBL.ObtenerClientes();
+            var cliente = _clienteBL.ObtenerClientesActivos();
 
             ViewBag.ClienteId = new SelectList(cliente, "Id", "Nombre");
 
@@ -51,21 +52,23 @@ namespace PumasUnah.WedAdmin.Controllers
                 return RedirectToAction("Index");
             }
 
-            var cliente = _clienteBL.ObtenerClientes();
+            var cliente = _clienteBL.ObtenerClientesActivos();
 
             ViewBag.ClienteId = new SelectList(cliente, "Id", "Nombre");
 
             return View(orden);
         }
+
         public ActionResult Editar(int id)
         {
-            var Orden = new Orden();
-            var cliente = _clienteBL.ObtenerClientes();
+            var orden = new Orden();
+            var cliente = _clienteBL.ObtenerClientesActivos();
 
-            ViewBag.ClienteId = new SelectList(cliente, "Id", "Nombre", Orden.ClienteId);
+            ViewBag.ClienteId = new SelectList(cliente, "Id", "Nombre", orden.ClienteId);
 
-            return View(Orden);
+            return View(orden);
         }
+
         [HttpPost]
         public ActionResult Editar(Orden orden)
         {
@@ -81,9 +84,9 @@ namespace PumasUnah.WedAdmin.Controllers
                 return RedirectToAction("Index");
             }
 
-            var cliente = _clienteBL.ObtenerClientes();
+            var cliente = _clienteBL.ObtenerClientesActivos();
 
-            ViewBag.ClienteId = new SelectList(cliente, "Id", "Nombre");
+            ViewBag.ClienteId = new SelectList(cliente, "Id", "Nombre", orden.ClienteId);
 
             return View(orden);
         }

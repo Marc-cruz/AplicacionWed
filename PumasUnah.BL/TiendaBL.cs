@@ -20,7 +20,23 @@ namespace PumasUnah.BL
 
         public List<Tienda> ObtenerTienda()
         {
-            listadeTienda = _contexto.Tienda.ToList();
+            listadeTienda = _contexto.Tienda
+                .Include("Categoria")
+                .OrderBy(r => r.Categoria.Descripcion)
+                .ThenBy(r => r.Descripcion)
+                .ToList();
+
+            return listadeTienda;
+        }
+
+        public List<Tienda> ObtenerTiendaActivos()
+        {
+            listadeTienda = _contexto.Tienda
+                .Include("Categoria")
+                .Where(r => r.Activo == true)
+                .OrderBy(r => r.Descripcion)
+                .ToList();
+
             return listadeTienda;
         }
 
@@ -34,15 +50,18 @@ namespace PumasUnah.BL
             {
                 var tiendaExistente = _contexto.Tienda.Find(tienda.Id);
                 tiendaExistente.Descripcion = tienda.Descripcion;
+                tiendaExistente.CategoriaId = tienda.CategoriaId;
+                tiendaExistente.Precio = tienda.Precio;
                 tiendaExistente.UrlImagen = tienda.UrlImagen;
             }
 
             _contexto.SaveChanges();
         }
 
-        public Tienda ObtenerTienda(int Id)
+        public Tienda ObtenerTienda(int id)
         {
-            var tienda = _contexto.Tienda.Find(Id);
+            var tienda = _contexto.Tienda
+                .Include("Categoria").FirstOrDefault(p => p.Id == id);
             return tienda;
         }
 

@@ -69,6 +69,13 @@ namespace PumasUnah.WedAdmin.Controllers
             return View(cliente);
         }
 
+        public ActionResult Eliminar(int id)
+        {
+            var cliente = _clienteBL.ObtenerCliente(id);
+
+            return View(cliente);
+        }
+
         [HttpPost]
         public ActionResult Eliminar(Cliente cliente)
         {
