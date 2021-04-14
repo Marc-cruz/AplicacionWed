@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PumasUnah.BL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,10 @@ namespace PumasUNAH.Wed.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            var TiendaBL = new TiendaBL();
+            var listadeTienda = TiendaBL.ObtenerTienda();
+
+            return View(listadeTienda);
         }
     }
 }
