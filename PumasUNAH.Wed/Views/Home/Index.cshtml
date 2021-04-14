@@ -8,8 +8,8 @@
     <div class="container">
         <div class="heading"><h3>Escoja tipo de entrada</h3></div>
         <div class="row">
-            @foreach (var Tienda in Model
-                .Where(r => r.Tienda.Descripcion == "entrada")
+            @foreach (var Tienda  in Model
+                .Where(r => r.Categoria.Descripcion == "entrada")
                 .Take(4)
                 .OrderBy(r => Guid.NewGuid())
                 )
