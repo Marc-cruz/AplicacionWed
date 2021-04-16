@@ -15,7 +15,7 @@ namespace PumasUNAH.Wed.Controllers
         {
             var TiendaBL = new TiendaBL();
             var listadeTienda = TiendaBL.ObtenerTienda();
-            ViewBag.adminwebsiteurl = ConfigurationManager.AppSettings["adminwebsiteurl1"];
+            ViewBag.adminwebsiteurl = ConfigurationManager.AppSettings["adminwebsiteurl"];
 
             return View(listadeTienda);
         }

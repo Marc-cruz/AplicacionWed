@@ -3,57 +3,69 @@
 @{
     ViewBag.Title = "Inicio";
 }
-
-<section class="story-area left-text center-sm-text">
+<!-- Start Categories  -->
+<div class="categories-shop">
     <div class="container">
-        <div class="heading"><h3>Escoja tipo de entrada</h3></div>
         <div class="row">
-            @foreach (var Tienda  in Model
-                .Where(r => r.Categoria.Descripcion == "entrada")
-                .Take(4)
-                .OrderBy(r => Guid.NewGuid())
-                )
+            @foreach (var tienda in Model)
             {
-                <div class="col-lg-3 col-md-4  col-sm-6 ">
-                    <div class="center-text mb-30">
-                        <div class="ïmg-200x mlr-auto pos-relative">
-                            <h6 class="ribbon-cont color-white"><div class="ribbon primary"></div><b>OFERTA</b></h6>
-                            <img src="@(ViewBag.adminWebsiteUrl + Tienda.UrlImagen)" alt="">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img class="img-fluid" src="@(ViewBag.adminwebsiteurl + tienda.UrlImagen)" alt="" />
+                        <a class="btn hvr-hover" href="#">@tienda.Descripcion</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- End Categories -->
+<!-- Start Products  -->
+
+
+<div class="products-box">
+    <div class="container">
+        <div class="row">
+            <div class="row special-list">
+                @foreach (var tienda in Model
+.Where(r => r.Categoria.Descripcion == "Camisolas")
+.Take(4)
+.OrderBy(r => Guid.NewGuid())
+)
+                {
+                    <div class="col-lg-3 col-md-6 special-grid top-featured">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <div class="type-lb">
+                                    <p class="new">Nuevo</p>
+                                </div>
+                                <img src="@(ViewBag.adminwebsiteurl + tienda.UrlImagen)" class="img-fluid" alt="">
+                                <div class="mask-icon">
+                                    <ul>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                    <a class="cart" href="#">Agregar al carrito</a>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                                    <div class="products-single fix">
+                                        <div class="box-img-hover">
+                                            <div class="type-lb">
+                                                <p class="sale">Disponible</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h5 class="mt-20">@Tienda.Descripcion</h5>
-                        <h4 class="mt-5 color-primary"><b>L @Tienda.Precio</b></h4>
-                    </div><!--text-center-->
-                </div><!-- col-md-3 -->
-            }
-        </div><!-- row-->
-    </div><!-- container -->
-</section>
+                    </div>
+                                <div class="why-text">
+                                    <h4>@tienda.Descripcion</h4>
+                                    <h5> L @tienda.Precio</h5>
+                                </div>
 
-<section class="story-area bg-seller color-white pos-relative">
-    <div class="pos-bottom triangle-up"></div>
-    <div class="pos-top triangle-bottom"></div>
-    <div class="container">
-        <h4 class="font-30 font-sm-20  center-text mb-25">Agregar una <b>Ensalada</b> fresca a tu orden</h4>
-    </div><!-- container -->
-</section>
-
-
-<section class="bg-lite-blue">
-    <div class="container">
-        <div class="row">
-            @foreach (var Tienda in Model)
-            {
-                <div class="col-md-6">
-                    <div class="sided-90x mb-30 ">
-                        <div class="s-left"><img class="br-3" src="@(ViewBag.adminWebsiteUrl + Tienda.UrlImagen)" alt="Menu Image"></div><!--s-left-->
-                        <div class="s-right">
-                            <h5 class="mb-10"><b>@Tienda.Descripcion</b><b class="color-primary float-right">L @Tienda.Precio</b></h5>
-                            <p class="pr-70"></p>
-                        </div><!--s-right-->
-                    </div><!-- sided-90x -->
-                </div><!-- food-menu -->
-            }
-        </div><!-- row -->
-    </div><!-- container -->
-</section>
-
+                                <!-- End Products  -->
+                }
