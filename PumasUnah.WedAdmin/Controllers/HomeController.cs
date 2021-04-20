@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace PumasUnah.WedAdmin.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         // GET: Home

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace PumasUnah.WedAdmin.Controllers
 {
+    [Authorize]
     public class TiendaController : Controller
     {
         TiendaBL _tiendaBL;

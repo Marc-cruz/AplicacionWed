@@ -13,6 +13,7 @@ namespace PumasUnah.BL
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            Database.SetInitializer(new DatosdeInicio()); //Agregando Datos de Inicio
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
         public DbSet<Entrada> Entrada { get; set; }
@@ -22,5 +23,6 @@ namespace PumasUnah.BL
 
         public DbSet<Orden> Ordenes { get; set; }
         public DbSet<OrdenDetalle> OrdenDetalle { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }
