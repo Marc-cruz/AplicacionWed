@@ -18,7 +18,7 @@ namespace PumasUnah.BL
         [Display(Name = "Descripcion")]
         [Required(ErrorMessage="Ingrese la descripcion")]
         [MinLength(3, ErrorMessage ="ingrese minimo tres caracteres")]
-        [MaxLength(20, ErrorMessage="ingrese maximo 20 caracteres") ]
+        [MaxLength(35, ErrorMessage="ingrese maximo 20 caracteres") ]
         public string Descripcion { get; set; }
 
         [Required(ErrorMessage = "Ingrese el precio")]
