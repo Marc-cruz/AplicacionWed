@@ -42,6 +42,9 @@
             Producto
         </th>
         <th>
+            Descripcion
+        </th>
+        <th>
             Cantidad
         </th>
         <th>
@@ -56,7 +59,7 @@
 @foreach (var item in Model.ListadeOrdenDetalle) {
     <tr>
         <td>
-            <img src="@item.Tienda.UrlImagen" alt="@item.Tienda.Descripcion" style="max-height: 64px; height:auto;"/>
+            <img src="@item.Tienda.UrlImagen" alt="@item.Tienda.Descripcion" style="max-height: 250px; height:auto;"/>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Tienda.Descripcion)

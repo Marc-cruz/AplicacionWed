@@ -16,7 +16,6 @@ namespace PumasUnah.BL
             Database.SetInitializer(new DatosdeInicio()); //Agregando Datos de Inicio
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
-        public DbSet<Entrada> Entrada { get; set; }
         public DbSet<Categoria> Categoria { get; set; }
         public DbSet<Tienda> Tienda { get; set; }
         public DbSet<Cliente> Cliente { get; set; }

@@ -12,11 +12,13 @@ namespace PumasUnah.WedAdmin.Controllers
     {
         OrdenesBL _ordenesBL;
         ClienteBL _clienteBL;
+ 
 
         public OrdenesController()
         {
             _ordenesBL = new OrdenesBL();
             _clienteBL = new ClienteBL();
+          
         }
 
 
