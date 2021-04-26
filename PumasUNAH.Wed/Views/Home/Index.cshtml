@@ -34,38 +34,51 @@
 .OrderBy(r => Guid.NewGuid())
 )
                 {
-                    <div class="col-lg-3 col-md-6 special-grid top-featured">
-                        <div class="products-single fix">
-                            <div class="box-img-hover">
-                                <div class="type-lb">
-                                    <p class="new">Nuevo</p>
-                                </div>
-                                <img src="@(ViewBag.adminwebsiteurl + tienda.UrlImagen)" class="img-fluid" alt="">
-                                <div class="mask-icon">
-                                    <ul>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                    </ul>
-                                    <a class="cart" href="#">Agregar al carrito</a>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6 special-grid best-seller">
-                                    <div class="products-single fix">
-                                        <div class="box-img-hover">
-                                            <div class="type-lb">
-                                                <p class="sale">Disponible</p>
-                                            </div>
-                                        </div>
+                    <div class="products-box">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="title-all text-center">
+                                        <h1>Recien Llegado</h1>
+                                        <p>Totalmente original, con sello autentico, todas las tallas disponibles.</p>
+                                        <p>Envios a todo Honduras.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                                <div class="why-text">
-                                    <h4>@tienda.Descripcion</h4>
-                                    <h5> L @tienda.Precio</h5>
-                                </div>
+                            <div class="col-lg-3 col-md-6 special-grid top-featured">
+                                <div class="products-single fix">
+                                    <div class="box-img-hover">
+                                        <div class="type-lb">
+                                            <p class="new">Nuevo</p>
+                                        </div>
+                                        <img src="@(ViewBag.adminwebsiteurl + tienda.UrlImagen)" class="img-fluid" alt="">
+                                        <div class="mask-icon">
+                                            <ul>
+                                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                            </ul>
+                                            <a class="cart" href="#">Agregar al carrito</a>
+                                        </div>
 
-                                <!-- End Products  -->
+                                        <div class="col-lg-3 col-md-6 special-grid best-seller">
+                                            <div class="products-single fix">
+                                                <div class="box-img-hover">
+                                                    <div class="type-lb">
+                                                        <p class="sale">Disponible</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="why-text">
+                                <h4>@tienda.Descripcion</h4>
+                                <h5> L @tienda.Precio</h5>
+                            </div>
+
+                            <!-- End Products  -->
                 }
